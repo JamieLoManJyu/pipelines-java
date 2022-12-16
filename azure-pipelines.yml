@@ -14,18 +14,12 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'MSDN'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: 'az aks get-credentials --resource-group AzureRbac --name AzureRbac --overwrite-existing'
-
 
 - task: Kubernetes@1
   inputs:
